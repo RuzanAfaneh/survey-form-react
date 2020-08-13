@@ -1,0 +1,103 @@
+
+.formContainer
+{
+   
+    width:100%;
+    height:400px;
+    padding:0px;
+    margin: auto;
+    border:1px solid gray;
+    background-color: white;
+
+}
+
+.form{
+   display:flex;
+   padding: 15px 10vw ;
+   flex-direction: row;
+   background-color: white;
+   }
+
+   .title{
+       padding:0px 11vw;
+   }
+    .firstCol , .secCol {
+   padding:5px 0px;
+   width: 50%;
+   display:flex;
+   justify-content: space-evenly;
+   flex-wrap: nowrap;
+   flex-direction: column;
+   }
+
+   .firstCol input , .secCol input,select{
+       font-size: 18px;
+     padding:10px;
+     margin:10px;
+      color:gray;
+   }
+
+   .switch{
+     text-align: center;
+   }
+
+   .counter , #age
+   {
+       width:70px;
+   }
+
+   .dec , .inc{
+       position: relative;
+       width:35px;
+       height:23px;
+   }
+   .dec{
+       left:-110px;
+       top:-0.2px;
+   }
+   .inc{
+       left:-55px;
+       top:21px;
+   }
+
+
+   .question{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;}
+
+
+.submit-form
+{
+    padding: 30px 100px ;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+img{
+    margin:auto;
+   width:15%;
+   height:100px;
+}
+
+.submit{
+    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
+    border-radius: 5px;
+    font-size: 20px;
+    padding:10px;
+    width:30%;
+    height: 50px;
+    margin: 10px auto;
+    color:#8dc63f;
+    transition:  .5s;
+    border-color:#8dc63f ;
+    background-color: white;
+  }
+  .submit:hover{
+    color: white;
+    background-color:#1ab9a7  ;
+    border-color: #1ab9a7;
+  }

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:3000/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+</style><style type="text/css">.button{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content:center;
+}
+
+#for {
+    position: relative;;
+    margin:20px;
+}
+
+#for:before {
+  content: "\f054";
+  right: 20px;}
+#back{
+    position: relative;;
+   
+    margin:20px;
+}
+.button input{
+    font-size: 18px;
+    width:10%;
+  padding:10px 30px;;
+    transition:  .5s;
+    color:white;
+    background-color: black;
+    border:none;
+    cursor: pointer;
+    }
+    input:hover ,input:active{
+      background-color:#1ab9a7;
+      outline: none;
+      border:none;
+    
+    }
+    
+     input:disabled {
+      color:white;
+      background-color:#C0C0C0	 ;
+    }
+   
+
+
+/* radio buttons */
+
+label {
+    cursor: pointer;
+    font-size:18px;
+    font-weight: 100;
+    margin-bottom: 12px;
+    margin-top: 12px;
+    padding-left: 50px;
+    position: relative;
+  
+  }
+
+  
+  label input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+  }
+  .checkMark {
+    background-color: #eee;
+    border-radius: 50px;
+    border: 1px solid gray;
+    height: 30px;
+    left: 0;
+    position: absolute;
+    top: -5px;
+    width: 30px;
+  }
+  
+  .box{
+    border-radius: 5px;;
+  }
+  label input:checked ~ .checkMark {
+    background-color: gray;
+  }
+  
+  .checkMark:after {
+    content: "";
+    display: none;
+    position: absolute;
+  }
+  
+  label input:checked ~ .checkMark:after {
+    display: block;
+  }
+  
+  label .checkMark:after {
+    left: 10px;
+    top: 25%;
+    width: 5px;
+    height: 10px;
+    margin: auto;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  label:hover input ~ .checkMark {
+    border-color: 2px solid gray;
+  }
+  
+
+textarea{
+  width: 70%;
+  margin-top:10px;
+}</style><style type="text/css">.container
+{
+  width: 80%;
+  height:80%;
+  padding: 0; 
+  margin: 100px auto;
+
+}
+.container{
+  box-shadow: 0 0 5px #777;
+  background-color:#f3f3f3; 
+  border:1px solid gray;
+  position: relative;
+  font-size: 20px;
+
+}
+
+.progress{
+  text-align: center;
+  padding:1vw 10vw 2vw;
+}
+.progress strong {
+  position: relative;
+text-align: center;
+}
+.progress-bar {
+  background-color: rgb(209, 78, 30);
+  width:100%;
+
+}</style><style type="text/css">
+.formContainer
+{
+   
+    width:100%;
+    height:400px;
+    padding:0px;
+    margin: auto;
+    border:1px solid gray;
+    background-color: white;
+
+}
+
+.form{
+   display:flex;
+   padding: 15px 10vw ;
+   flex-direction: row;
+   background-color: white;
+   }
+
+   .title{
+       padding:0px 10px;
+   }
+    .firstCol , .secCol{
+      
+   padding:5px 10px;
+   width: 50%;
+   display:flex;
+   justify-content: space-evenly;
+   flex-wrap: nowrap;
+   flex-direction: column;
+   }
+   
+   .firstCol input , .secCol input,select{
+       font-size: 18px;
+     padding:10px;
+     margin:10px; 
+      color:gray;
+   }
+   
+   .switch{
+     text-align: center;
+   }
+
+   .counter , #age
+   {
+       width:70px;
+   }
+  
+   .dec , .inc{
+       position: relative;
+       width:35px;
+       height:23px;
+   }
+   .dec{
+       left:-110px;
+       top:-0.2px;
+   }
+   .inc{
+       left:-55px;
+       top:22px;
+   }
+
+
+   .question{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;}
+
+
+.submit-form
+{
+    padding: 30px 100px ;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+img{
+    margin:auto;
+   width:15%;
+   height:100px;
+}
+
+.submit{
+    font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;;
+    border-radius: 5px;
+    font-size: 20px;
+    padding:10px;
+    width:20%;
+    height: 50px;
+    margin: 10px auto;
+    color:#8dc63f;
+    transition:  .5s;
+    border-color:#8dc63f ;
+    background-color: white;
+  }
+  .submit:hover{
+    color: white;
+    background-color:#1ab9a7  ;
+    border-color: #1ab9a7;
+  }</style><script charset="utf-8" src="./React App_files/main.c9559efe8808af3cd418.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.75033d9f7b67cda495f6.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.fe7e9a5d44b8d6536415.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.65a14eec1299ba43d4cc.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.10e663581a1d01a85c93.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.2e10215ca611f62e602c.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.e7f24ea2b7c7f94f1388.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.a73b7fdba035ab0e7e57.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.8a66c1a9716f7e7fa6f9.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.5887987fc463f9e3ff63.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.0970f7d120bbc2bfeab5.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.646a821cfe72bb57934e.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.2eac9d8f256d697babf2.hot-update.js"></script></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div class="container"><div class="progress"><strong>PROGRESS 0/4</strong><div class="progress-bar" style="width: 0%;"></div></div><div class="formContainer"><h3 class="title">Enter Your personal info</h3><form class="form"><div class="firstCol"><input type="text" placeholder="First name"><input type="text" placeholder="Last Name"><input type="text" placeholder="Email"></div><div class="secCol"><select id="select" name="country" required=""><option value="" disabled=""> select your country</option><option> Europe </option><option>Asia</option><option>North America </option><option>South America</option></select><div class="incrementor"><input class="counter" type="text" name="counter" required=""><input class="inc" type="button" name="increment" value="+"><input class="dec" type="button" name="decrement" value="-"><span>your incrementor</span></div><div class="gender"><input id="age" type="text" placeholder="Age" name="age" required=""><label>   <input name="gender" type="radio" required="" value="Male">Male  <span class="checkMark"></span></label><label> <input name="gender" type="radio" required="" value="Female">  <span class="checkMark"></span>Female</label></div></div></form><div class="switch"><strong>Do ypu accept <span>term and conditions?</span></strong><input type="checkbox"></div></div><div class="button"><input type="button" id="back" class="button" value="Backwards" disabled=""><input type="button" id="for" class="button" value="Forward"></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.7e074e07a5476241aaeb.hot-update.js"></script>
+
+</body></html>
