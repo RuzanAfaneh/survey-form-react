@@ -6,7 +6,7 @@ return(
     <input type="button" id="back"className="button" value="Backwards" onClick={()=>index<=0 ? 0:setIndex(index-1)} disabled={index===0? true:false}/>
     </div>
 );
-} 
+}
 
 export const BackwardsButton=()=> {
     <div className="button">
