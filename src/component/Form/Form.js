@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState, useContext } from 'react';
 
 import './Form.scss';
-import InfoContext from '/home/dev/Desktop/from/src/component/InfoContext.js'
+import InfoContext from '../InfoContext'
 import useForm from '../useForm'
 
 const Form = () => {
@@ -44,11 +44,14 @@ const Form = () => {
             <label> <input name="gender" type="radio" value="Female" onChange={e => setValues() } values={values ? values.gender : ''} required />  <span className="checkMark"></span>Female</label>
           </div>
         </div>
-      </form><div class="switch">
-        <strong>Do ypu accept <span>term and conditions?</span></strong>
-        <input type="checkbox" /></div>
-      {/*<input className="submit" type="Submit" value= "SUBMIT THE SURVEY" />*/}
+      </form>
 
+
+      <div class="button-switch">
+      <h4>Do you accept terms and bluh bluh bluh </h4>
+  <input type="checkbox" id="switch-orange" class="switch" />
+  <label for="switch-orange" class="lbl-off"></label>  
+</div>
     </div>
   )
 }

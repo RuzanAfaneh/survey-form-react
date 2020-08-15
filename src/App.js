@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import '/home/dev/Desktop/from/src/component/Buttons/Button.scss';
+import './component/Buttons/Button.scss';
 import './App.css';
 import Form from './component/Form/Form';
 import QuestionOne from './component/Pages.js';

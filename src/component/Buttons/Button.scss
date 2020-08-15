@@ -133,56 +133,117 @@ textarea {
 
 /* switch */
 
+// -- vars
 
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+$height: 30 / 16 * 1em;
+$width: 72 / 16 * 1em;
+
+$color-white: #fefefe;
+$color-clouds: #ecf0f1;
+$color-silver: #bdc3c7;
+$color-peter-river: #3498db;
+$color-carrot: #e67e22;
+
+$transition-default: 0.25s ease-out 0.10s;
+
+// -- selectors
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+.button-switch {
+  display: flex;
+  justify-content: center;
+  height: $height;
+  margin-bottom: 10 / 16 * 1em;
+  position: relative;
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  .lbl-off,
+  .lbl-on {
+    cursor: pointer;
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 1em;
+    position: absolute;
+    top: 8 / 16 * 1em;
+    transition: opacity $transition-default;
+    text-transform: uppercase;
+  }
 
-input:checked+.slider {
-  background-color: #2196F3;
-}
+  .lbl-off {
+    right: 7 / 16 * 1em;
+  }
 
-input:focus+.slider {
-  box-shadow: 0 0 1px #2196F3;
-}
+  .lbl-on {
+    color: $color-white;
+    opacity: 0;
+    left: 7 / 16 * 1em;
+  }
 
-input:checked+.slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
+  .switch {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    // --
+    height: 0;
+    line-height: 0;
+    outline: none;
+    position: absolute;
+    top: 0;
+    width: 0;
 
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
+    &:before,
+    &:after {
+      content: '';
+      font-size: 1em;
+      position: absolute;
+    }
 
-.slider.round:before {
-  border-radius: 50%;
+    &:before {
+      border-radius: 20 / 16 * 1em;
+      background: $color-silver;
+      height: $height;
+      left: 4 / 16 * -1em;
+      top: 3 / 16 * -1em;
+      transition: background-color $transition-default;
+      width: $width;
+    }
+
+    &:after {
+      box-shadow: 0 .0625em .375em 0 #666;
+      border-radius: 50%;
+      background: $color-white;
+      height: 24 / 16 * 1em;
+      transform: translate(0, 0);
+      transition: transform $transition-default;
+      width: 24 / 16 * 1em;
+    }
+
+    &:checked {
+      &:after {
+        transform: translate(40 / 16 * 1em, 0);
+      }
+
+      & ~ .lbl-off {
+        opacity: 0;
+      }
+
+      & ~ .lbl-on {
+        opacity: 1;
+      }
+    }
+
+    &#switch-orange {
+      &:checked:before {
+        background: green;
+      }
+    }
+
+      
+    
+  }
 }
