@@ -6,6 +6,20 @@ import InfoContext from './InfoContext';
 export const QuestionOne = () => {
 
   const { values, setValues } = useContext(InfoContext);
+
+  useEffect(() => {
+    console.log("::::")
+    return ()=>
+     {    for (const i in values) {
+        console.log(i)
+      if (values[i] === '' && i==="satisfaction" ){
+        alert(i+" is empty");
+        break;
+     }     }
+    }
+  }, [])
+
+
   return (
     <div className="formContainer">
       <form className="question form  radio">
@@ -21,6 +35,16 @@ export const QuestionOne = () => {
 };
 export const QuestionTwo = () => {
   const { values, setValues } = useContext(InfoContext);
+  useEffect(() => {
+    return ()=>
+     {    for (const i in values) {
+        console.log(i)
+      if (values[i] === '' && i==="know" ){
+        alert(i+" is empty");
+        break;
+     }     }
+    }
+  }, [])
 
   return (
     <div className="formContainer">
@@ -40,6 +64,16 @@ export const QuestionTwo = () => {
 export const QuestionThree = () => {
   const { values, setValues } = useContext(InfoContext);
 
+  useEffect(() => {
+    return ()=>
+     {    for (const i in values) {
+        console.log(i)
+      if (values[i] === '' && i==="suggestion" ){
+        alert(i+" is empty");
+        break;
+     }     }
+    }
+  }, [])
   return (
     <div className="formContainer">
       <form className="radio form question ">
