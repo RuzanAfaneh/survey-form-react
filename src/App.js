@@ -5,9 +5,7 @@ import './App.css';
 import Form from './component/Form/Form';
 import QuestionOne from './component/Pages.js';
 import { QuestionTwo, QuestionThree, LastPage } from './component/Pages.js';
-import  InfoContext from './component/InfoContext';
 import  {InfoContextProvider} from './component/InfoContext';
-import useForm from './component/useForm'
 
 
 function App() {
