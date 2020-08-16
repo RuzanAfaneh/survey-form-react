@@ -8,18 +8,25 @@ import InfoContext from '../InfoContext'
 const Form = () => {
   const { values, setValues } = useContext(InfoContext);
   const [count, setCount] = useState(0)
+  const handleChange= (e) =>{
+   return (
+       setValues({ ...values, [e.target.name]: e.target.value }),
+      console.log(values),
+      console.log("lol")
+      )}
+
 
   return (
     <div className="formContainer">
       <h3 className="title">Enter Your personal info</h3>
       <form className="form" >
         <div className="firstCol">
-          <input type="text" placeholder="First name" name="firstName" onChange={e => setValues({ ...values, firstName: e.target.value })} required />
-          <input type="text" placeholder="Last Name" name="lastName" onChange={e => setValues({ ...values, lastName: e.target.value })} values={values ? values.lastname : ''} required />
-          <input type="text" placeholder="Email" name="email" onChange={e => setValues({ ...values, email: e.target.value })} values={values ? values.email : ''} required />
+          <input type="text" placeholder="First name" name="firstName" onChange={handleChange} required />
+          <input type="text" placeholder="Last Name" name="lastName" onChange={handleChange} values={values ? values.lastname : ''} required />
+          <input type="text" placeholder="Email" name="email" onChange={handleChange} values={values ? values.email : ''} required />
         </div>
         <div className="secCol">
-          <select id="select" name="country" onChange={e => setValues({ ...values, country: e.target.value })} required>
+          <select id="select" name="country" onChange={handleChange} required>
             <option value="" disabled selected> select your country</option>
             <option> Europe </option>
             <option>Asia</option>
@@ -28,15 +35,15 @@ const Form = () => {
           </select>
 
           <div className="incrementor">
-            <input className="counter" type="text" name="counter" value={count} onChange={e => setValues({ ...values, incrementor: e.target.value })} values={values ? values.counter : ''} required />
+            <input className="counter" type="text" name="counter" value={count} onChange={handleChange} values={values ? values.counter : ''} required />
             <input className="inc" type="button" value="+" name="increment" onClick={() => setCount(count + 1)} />
             <input className="dec" type="button" value="-" name="decrement" onClick={() => setCount(count - 1)} />
             <span>your incrementor</span>
           </div>
           <div className="gender">
             <input id="age" type="text" placeholder="Age" name="age" required />
-            <label>   <input name="gender" type="radio" value="Male" onChange={e => setValues({ ...values, gender: e.target.value })} values={values ? values.gender : ''} required />Male  <span className="checkMark"></span></label>
-            <label> <input name="gender" type="radio" value="Female" onChange={e => setValues({ ...values, gender: e.target.value })} values={values ? values.gender : ''} required />  <span className="checkMark"></span>Female</label>
+            <label>   <input name="gender" type="radio" value="Male" onChange={handleChange} values={values ? values.gender : ''} required />Male  <span className="checkMark"></span></label>
+            <label> <input name="gender" type="radio" value="Female" onChange={handleChange} values={values ? values.gender : ''} required />  <span className="checkMark"></span>Female</label>
           </div>
         </div>
       </form>
